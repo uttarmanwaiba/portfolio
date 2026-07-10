@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>नेपाल / ネパール - 私の国紹介</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Yu Gothic",sans-serif;
+    background:#f4f6f9;
+    color:blueviolet;
+}
+
+
+/* ヒマラヤ背景 */
+
+.hero{
+
+    height:100vh;
+
+    background:
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMemwEpzon9XbyL1DQgATIHmff-FKeRA_uIaqnppleBbDxEDdUrW_HcKc&s=10")
+    center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    animation:zoom 20s infinite alternate;
+}
+
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    color:white;
+
+}
+
+
+.hero h1{
+
+    font-size:80px;
+
+    text-shadow:0 0 20px black;
+
+    animation:float 4s infinite;
+
+}
+
+
+.hero p{
+
+    font-size:30px;
+
+    margin-top:20px;
+
+    text-shadow:0 0 15px black;
+
+}
+
+
+/* 内容 */
+
+.container{
+
+    max-width:1000px;
+
+    margin:50px auto;
+
+    padding:20px;
+
+}
+
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s;
+
+}
+
+
+.card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+.card h2{
+
+    color:pink;
+
+    border-left:6px solid blue;
+
+    padding-left:10px;
+
+}
+
+
+/* 画像 */
+
+.country-image{
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    margin:20px 0;
+
+}
+
+
+/* animation */
+
+@keyframes float{
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+@keyframes zoom{
+
+    from{
+
+        background-size:100%;
+
+    }
+
+    to{
+
+        background-size:115%;
+
+    }
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+नेपाल / ネパール
+</h1>
+
+<p>
+
+世界最高峰ヒマラヤの国<br>
+
+सगरमाथाको देश नेपाल
+
+</p>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<h2>
+私の国の紹介 / मेरो देशको परिचय
+</h2>
+
+<img class="country-image"
+
+src="https://www.club-t.com/sp/spgroup/abroad/expert/asa/nepal/images/expert-asa-nepal_spot_img_map_01.jpg"
+
+alt="Nepal">
+
+<p>
+
+ネパールはヒマラヤ山脈に囲まれた美しい国です。
+世界最高峰エベレストがあり、多くの文化があります。
+
+</p>
+
+<p>
+
+मेरो देश प्राकृतिक सौन्दर्य र हिमालय पर्वतले भरिएको सुन्दर देश हो।
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+ルンビニ / लुम्बिनी
+</h2>
+
+<img class="country-image"
+
+src="https://i.ytimg.com/vi/onn9KOQjEWU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDpdONLXvyYDHX73pKGMiWrsR96gA"
+
+alt="Everest">
+
+<p>
+
+ルンビニはお釈迦様が誕生した聖地です。
+
+</p>
+
+<p>
+
+    लुम्बिनी भगवान बुद्धको जन्मस्थल हो।
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+ポカラ / पोखरा
+</h2>
+
+<img class="country-image"
+
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJlHw3lE0wRrhhQ5FaoJJDhMN5rvUdy_F7liiK28b-A&s=10"
+
+alt="Pokhara">
+
+<p>
+
+ポカラは美しい湖とヒマラヤの景色で有名です。
+
+</p>
+
+<p>
+
+पोखरा सुन्दर ताल र हिमालको दृश्यका लागि प्रसिद्ध छ।
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+食べ物 / नेपाली खाना
+</h2>
+
+<img class="country-image"
+
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5AyurnM-ojrgLC1QAPKpUVbY277AaasA_IJcmwnFbpA&s"
+
+alt="Food">
+
+<p>
+
+モモやダルバートはネパールを代表する料理です。
+
+</p>
+
+<p>
+
+मोमो र दालभात नेपालका प्रसिद्ध परिकार हुन्।
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+文化 / संस्कृति
+</h2>
+
+<img class="country-image"
+
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCAPU-kShVHwapvahwztXT8Ur2AxIF2OEMKUQ7ZJmaFg&s=10"
+
+alt="Culture">
+
+<p>
+
+ネパールには多くの民族と伝統文化があります。
+
+</p>
+
+<p>
+
+नेपाल बहुजातीय र बहुसांस्कृतिक देश हो।
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+
+const cards =
+document.querySelectorAll(".card");
+
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+
+});
+
+
+});
+
+
+cards.forEach(card=>{
+
+observer.observe(card);
+
+});
+
+
+</script>
+
+</body>
+</html>
