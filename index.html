@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAIBA's Page | プロフィール</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #050816;
+    color: white;
+    line-height: 1.8;
+}
+
+:root {
+    --cyan: #00f7ff;
+    --purple: #a855f7;
+    --panel: rgba(15,25,55,.75);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 20%, #102c50, transparent 40%),
+        radial-gradient(circle at 85% 80%, #35104c, transparent 40%);
+    z-index: -1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5,8,22,.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0,247,255,.3);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cyan);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.current {
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 90px 20px 50px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem,5vw,3.5rem);
+    color: var(--cyan);
+    text-shadow: 0 0 20px rgba(0,247,255,.5);
+}
+
+.hero p {
+    color: #b9c6dd;
+    margin-top: 12px;
+}
+
+/* PROFILE */
+.profile-section {
+    padding: 35px 0 90px;
+}
+
+.profile-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    padding: 35px;
+    border: 1px solid rgba(0,247,255,.4);
+    border-radius: 22px;
+    background: var(--panel);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 25px rgba(0,247,255,.12);
+    transition: .4s;
+}
+
+.profile-card:hover {
+    box-shadow: 0 0 35px rgba(0,247,255,.3);
+    transform: translateY(-5px);
+}
+
+.profile-image {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 20px rgba(0,247,255,.3);
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    color: var(--cyan);
+    margin-bottom: 20px;
+}
+
+.profile-info h3 {
+    color: #d8b4fe;
+    margin: 22px 0 8px;
+    border-left: 3px solid var(--cyan);
+    padding-left: 12px;
+}
+
+.profile-info p {
+    color: #d1d9e9;
+}
+
+.career {
+    padding-left: 20px;
+}
+
+.career li {
+    margin-bottom: 8px;
+    color: #d1d9e9;
+}
+
+.pr-box {
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(0,247,255,.07);
+    border: 1px solid rgba(0,247,255,.2);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid rgba(0,247,255,.2);
+    color: #9caecb;
+}
+
+/* ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: .8s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #080e22;
+        max-height: 0;
+        overflow: hidden;
+        transition: .4s;
+    }
+
+    nav.active {
+        max-height: 300px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .profile-card {
+        grid-template-columns: 1fr;
+        padding: 22px;
+    }
+
+    .profile-image {
+        height: 280px;
+        max-width: 300px;
+        margin: auto;
+        display: block;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container header-inner">
+
+        <div class="logo">WAIBA'S Portfolio</div>
+
+        <div class="menu-btn" id="menuBtn">☰</div>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html" class="current">プロフィール</a></li>
+                <li><a href="mycountry.html">私の国の紹介</a></li>
+                <li><a href="myportfolio.html">ポートフォーリオ</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container reveal">
+        <h1>MY PROFILE</h1>
+        <p>こんにちは！ WAIBA UTTAR MAN のプロフィールページへようこそ。</p>
+    </div>
+</section>
+
+<!-- PROFILE -->
+<section class="profile-section">
+    <div class="container">
+
+        <div class="profile-card reveal">
+
+            <div>
+                <img
+                    src="MAN.jpg"
+                    alt=" WAIBA UTTAR MAN "
+                    class="profile-image"
+                >
+            </div>
+
+            <div class="profile-info">
+
+                <h2>👤 プロフィール</h2>
+
+                <h3>名前</h3>
+                <p> WAIBA UTTAR MAN ( ワイバウッタルマン)</p>
+
+                <h3>経歴</h3>
+
+                <ul class="career">
+                    <li>A高校卒業</li>
+                    <li>B日本語学校卒業</li>
+                    <li>C AI学科 国際ITビジネスコース（卒業見込み）</li>
+                    <li>ナチュラルローソン 3年間の経験あり</li>
+                </ul>
+
+                <h3>自己PR</h3>
+
+                <div class="pr-box">
+                    <p>
+                        私の長所は、現状の問題点を把握し、
+                        その問題の解決策を考え、
+                        自ら行動できる積極性です。
+                        私の強みは、分からないことがあっても
+                        自分で調べ、諦めずに最後まで努力できることです。
+ 
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© <span id="year"></span> Waiba Uttar Man | My Profile</p>
+</footer>
+
+<script>
+
+// MOBILE MENU
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    menuBtn.textContent =
+        nav.classList.contains("active") ? "×" : "☰";
+});
+
+// CLOSE MENU AFTER CLICK
+nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        menuBtn.textContent = "☰";
+    });
+});
+
+// SCROLL ANIMATION
+const reveals = document.querySelectorAll(".reveal");
+
+function revealElements() {
+    reveals.forEach(item => {
+        if (item.getBoundingClientRect().top < window.innerHeight - 80) {
+            item.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealElements);
+revealElements();
+
+// CURRENT YEAR
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
