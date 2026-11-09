@@ -1,58 +1,107 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <title>Waiba's Page</title>
+<meta charset="utf-8">
+<title>Waiba's Page</title>
 
-```
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
 
-    h1 {
-        text-align: center;
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f7fa;
+}
 
-    ul {
-        list-style: none;
-        padding: 0;
-        text-align: center;
-    }
+h1 {
+    text-align: center;
+    color: #24527a;
+    animation: fadeIn 2s ease;
+}
 
-    ul li {
-        display: inline-block;
-        margin: 0 20px;
-    }
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
 
-    ul li a {
-        text-decoration: none;
-        font-weight: bold;
-    }
+ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
 
-    img {
-        max-width: 500px;
-        height: auto;
-        border-radius: 10px;
-        margin: 10px 0;
-    }
+ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #24527a;
+    transition: 0.4s;
+}
 
-    .profile-photo {
-        width: 250px;
-        display: block;
-        margin: 20px auto;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+ul li a:hover {
+    color: orange;
+    font-size: 20px;
+}
+
+img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.profile-frame img {
+    width: 250px;
+    display: block;
+    margin: 20px auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2, h3, h4 {
+    color: #24527a;
+}
+
 </style>
-```
-
 </head>
 
 <body>
 
-```
 <h1>Waiba's Page</h1>
 
 <ul>
@@ -63,39 +112,87 @@
 
 <hr>
 
+<div class="reveal">
+
 <h2>ポートフォーリオ</h2>
 
 <h3>自己紹介写真</h3>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZSh87akX8RJtDapEg6yEEn3oBQ8253jFvupFlquOJRA&s=10" alt="Waiba'S Photo" class="profile-photo">
+
+<div class="c1">
+    <div class="profile-frame">
+        <img src="WAIBA.png"
+             alt="プロフィール画像"
+             width="300"
+             height="400">
+    </div>
+</div>
+
+</div>
 
 <hr>
 
-<h3>CADの授業で作成した設計図</h3>
+<div class="reveal">
+<div class="cad-section">
+  <h3>CADの授業で作成した設計図</h3>
 
-<h4>設計図A</h4>
-<img src="design-1.png" alt="設計図A">
+  <h4>設計図A</h4>
+  <img src="ut2026.11.01cad.png" alt="CADの授業で作成した設計図A">
 
-<h4>設計図B</h4>
-<img src="design-2.png" alt="設計図B">
+  <h4>設計図B</h4>
+  <img src="my-photo.png" alt="CADの授業で作成した設計図B">
+</div>
 
 <hr>
+<div class="reveal">
 
 <h3>Pythonで作成したプログラム</h3>
+<img src="star_dodger.py"alt="スカッシュゲーム">
 
-<h4>スカッシュゲーム</h4>
-<img src="python-squash.png" alt="スカッシュゲーム">
+<h4>CAD</h4>
+<img src="utw2026.11.01.png" alt="practice">
+
+<h4>CAD</h4>
+<img src="3級practice.png"alt="practice">
+
+</div>
 
 <hr>
+
+<div class="reveal">
 
 <h3>Webサイト構築の授業で作成したホームページ</h3>
 
 <h4>Jason's Page</h4>
 <img src="waiba_page.png" alt="Jason's Page">
 
+</div>
+
 <hr>
-```
+
+<script>
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+
+    reveals.forEach(function(element) {
+
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            element.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
+
+</script>
 
 </body>
 </html>
-
-
